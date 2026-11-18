@@ -3,15 +3,24 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-     if (x < 0) return false;   // negative numbers not palindrome
+        
+        if(x<0) return false
 
-    let str = x.toString();
+        let str=String(x);
 
-    for (let i = 0; i < str.length / 2; i++) {
-        if (str[i] !== str[str.length - 1 - i]) {
-            return false;
+        let left=0;
+        let right=str.length-1;
+
+        while(left<right)
+        {
+            if(str[left]!=str[right])
+            {
+                return false;
+            }
+
+            left++;
+            right--;
         }
-    }
 
-    return true;
+        return true
 };
